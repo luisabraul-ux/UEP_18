@@ -2,14 +2,13 @@
 <html lang="pt">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>UEP — 18.º Aniversário</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 :root{--azul:#0a1628;--ouro:#c9a84c;--muted:#555;}
 html{scroll-behavior:smooth;}
 body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1a1a2e;overflow-x:hidden;}
-
 .hero{position:relative;width:100%;min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding-bottom:52px;overflow:hidden;}
 .hero-bg{position:absolute;inset:0;background-image:url('img/torre.jpg');background-size:cover;background-position:center 30%;filter:brightness(0.4);z-index:0;}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,22,40,0.2) 0%,rgba(10,22,40,0.8) 65%,rgba(10,22,40,1) 100%);z-index:1;}
@@ -24,21 +23,19 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1a1a2e;overf
 .hero-scroll span{font-size:9px;letter-spacing:3px;color:rgba(255,255,255,0.35);text-transform:uppercase;}
 .scroll-arrow{width:18px;height:18px;border-right:2px solid rgba(255,255,255,0.3);border-bottom:2px solid rgba(255,255,255,0.3);transform:rotate(45deg);}
 @keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
-
 section{padding:52px 24px;}
 .s-label{font-size:10px;font-weight:700;color:var(--ouro);letter-spacing:5px;text-transform:uppercase;margin-bottom:6px;}
 .s-title{font-size:26px;font-weight:800;color:var(--azul);line-height:1.2;margin-bottom:14px;}
 .s-bar{width:40px;height:3px;background:var(--ouro);margin-bottom:22px;border-radius:2px;}
 .s-text{font-size:15px;line-height:1.8;color:var(--muted);}
-
 .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:28px;}
 .stat{background:var(--azul);border-radius:10px;padding:18px 10px;text-align:center;border:1px solid rgba(201,168,76,0.2);}
 .stat-n{font-size:26px;font-weight:900;color:var(--ouro);display:block;}
 .stat-l{font-size:9px;color:rgba(255,255,255,0.55);letter-spacing:1px;text-transform:uppercase;margin-top:3px;display:block;}
-
-.cmdt-sec{background:var(--azul);padding:52px 24px 0;}
+.cmdt-sec{background:var(--azul);padding:52px 24px 0;position:relative;padding-bottom:80px;}
+.cmdt-sec::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:80px;background:#fff;clip-path:polygon(0 100%,100% 0%,100% 100%,0 100%);}
 .cmdt-foto-wrap{display:flex;justify-content:center;margin-bottom:22px;}
-.cmdt-foto{width:300px;height:auto;display:block;border-radius:4px;}
+.cmdt-foto{width:280px;height:auto;display:block;border-radius:4px;}
 .cmdt-id{text-align:center;margin-bottom:20px;}
 .cmdt-cargo{font-size:9px;color:var(--ouro);letter-spacing:4px;text-transform:uppercase;display:block;margin-bottom:3px;}
 .cmdt-nome{font-size:17px;font-weight:700;color:#fff;display:block;}
@@ -46,72 +43,42 @@ section{padding:52px 24px;}
 .cmdt-sep{width:40px;height:1px;background:var(--ouro);opacity:0.35;margin:14px auto 20px;}
 .cmdt-quote{font-size:15px;line-height:1.85;color:rgba(255,255,255,0.8);font-style:italic;border-left:3px solid var(--ouro);padding-left:18px;}
 .cmdt-assin{font-size:11px;color:var(--ouro);text-align:right;margin-top:14px;letter-spacing:1px;}
-.cmdt-wave{display:none;}
-.cmdt-sec{position:relative;padding-bottom:80px;}
-.cmdt-sec::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:80px;background:#fff;clip-path:polygon(0 100%,100% 0%,100% 100%,0 100%);}
-
+/* SO buttons */
 .subs{background:#fff;padding:52px 0;}
 .subs-header{padding:0 24px;margin-bottom:28px;}
-.sub-card{position:relative;overflow:hidden;min-height:380px;display:flex;align-items:flex-end;}
-.sub-bg{position:absolute;inset:0;background-size:cover;filter:brightness(0.35);}
-.sub-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,22,40,0.97) 0%,rgba(10,22,40,0.6) 40%,rgba(10,22,40,0.15) 70%,transparent 100%);}
-.sub-body{position:relative;z-index:2;padding:24px;width:100%;}
-.sub-lema{font-size:9px;color:var(--ouro);letter-spacing:3px;text-transform:uppercase;display:block;margin-bottom:3px;}
-.sub-nome{font-size:19px;font-weight:800;color:#fff;text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:7px;}
-.sub-sigla{display:inline-block;background:var(--ouro);color:var(--azul);font-size:9px;font-weight:700;letter-spacing:2px;padding:3px 9px;border-radius:2px;margin-bottom:10px;}
-.sub-text{font-size:13px;color:rgba(255,255,255,0.75);line-height:1.65;}
-.sub-data{margin-top:10px;font-size:9px;color:rgba(201,168,76,0.55);letter-spacing:2px;text-transform:uppercase;}
-
+.so-grid{display:flex;flex-direction:column;gap:0;}
+.so-btn{position:relative;overflow:hidden;min-height:90px;display:flex;align-items:stretch;text-decoration:none;}
+.so-btn-bg{position:absolute;inset:0;background-size:cover;filter:brightness(0.3);transition:filter 0.3s;}
+.so-btn:active .so-btn-bg{filter:brightness(0.45);}
+.so-btn-ov{position:absolute;inset:0;background:linear-gradient(to right,rgba(10,22,40,0.98) 0%,rgba(10,22,40,0.75) 55%,rgba(10,22,40,0.2) 100%);}
+.so-btn-body{position:relative;z-index:2;padding:14px 16px;display:flex;align-items:center;gap:14px;flex:1;min-width:0;}
+.so-btn-brasao{width:48px;height:48px;object-fit:contain;flex-shrink:0;filter:drop-shadow(0 2px 6px rgba(0,0,0,0.5));}
+.so-btn-info{display:flex;flex-direction:column;min-width:0;flex:1;}
+.so-btn-sigla{display:inline-block;background:#c9a84c;color:#0a1628;font-size:9px;font-weight:700;letter-spacing:2px;padding:2px 8px;border-radius:2px;margin-bottom:4px;width:fit-content;}
+.so-btn-nome{font-size:13px;font-weight:800;color:#fff;text-transform:uppercase;letter-spacing:0.3px;line-height:1.3;white-space:normal;}
+.so-btn-lema{font-size:9px;color:rgba(201,168,76,0.75);letter-spacing:1px;text-transform:uppercase;margin-top:3px;white-space:normal;line-height:1.3;}
+.so-btn-arrow{flex-shrink:0;color:#c9a84c;font-size:24px;margin-left:8px;}
+/* Galeria */
 .galeria{background:#f4f4f4;padding:52px 24px;}
 .gal-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:22px;}
-.gal-item{border-radius:8px;overflow:hidden;aspect-ratio:4/3;}
+.gal-item{border-radius:8px;overflow:hidden;aspect-ratio:4/3;position:relative;}
 .gal-item img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;}
-
+.gal-link{text-decoration:none;display:block;}
+.gal-label{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(10,22,40,0.85));color:#c9a84c;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;padding:8px 10px 6px;}
+/* Redes */
 .redes{background:var(--azul);padding:52px 24px;text-align:center;}
 .redes .s-title{color:#fff;}
-.redes .s-text{color:rgba(255,255,255,0.55);margin-bottom:28px;}
-.redes-lista{display:flex;flex-direction:column;gap:12px;}
+.redes-lista{display:flex;flex-direction:column;gap:12px;margin-top:20px;}
 .rede-btn{display:flex;align-items:center;justify-content:center;gap:10px;padding:15px 20px;border-radius:50px;font-size:14px;font-weight:600;text-decoration:none;}
 .r-fb{background:#1877F2;color:#fff;}
 .r-ig{background:#E1306C;color:#fff;}
 .r-li{background:#0077B5;color:#fff;}
-
 footer{background:#05101e;padding:28px 24px;display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center;}
 .ft-psp{display:flex;align-items:center;gap:8px;}
-.ft-barras{color:var(--ouro);font-size:17px;font-weight:900;letter-spacing:1px;}
+.ft-barras{color:var(--ouro);font-size:17px;font-weight:900;}
 .ft-nome{font-size:10px;color:rgba(255,255,255,0.38);letter-spacing:3px;text-transform:uppercase;}
 .ft-lema{font-size:10px;color:rgba(201,168,76,0.45);letter-spacing:4px;text-transform:uppercase;font-style:italic;}
-.ft-copy{font-size:9px;color:rgba(255,255,255,0.2);letter-spacing:1px;}
-
-.sub-legal{margin-top:12px;padding:10px 12px;background:rgba(201,168,76,0.1);border-left:2px solid rgba(201,168,76,0.5);border-radius:0 4px 4px 0;}
-.sub-legal-art{font-size:9px;font-weight:700;color:rgba(201,168,76,0.8);letter-spacing:2px;text-transform:uppercase;display:block;margin-bottom:4px;}
-.sub-legal-txt{font-size:11px;color:rgba(255,255,255,0.6);line-height:1.6;margin:0;}
-.cmdt-foto-wrap{display:flex;justify-content:center;margin-bottom:22px;}
-
-.so-grid{display:flex;flex-direction:column;gap:0;}
-.so-btn{position:relative;overflow:hidden;height:100px;display:flex;align-items:center;text-decoration:none;}
-.so-btn-bg{position:absolute;inset:0;background-size:cover;filter:brightness(0.3);transition:filter 0.3s;}
-.so-btn:active .so-btn-bg{filter:brightness(0.45);}
-.so-btn-ov{position:absolute;inset:0;background:linear-gradient(to right,rgba(10,22,40,0.98) 0%,rgba(10,22,40,0.7) 60%,rgba(10,22,40,0.3) 100%);}
-.so-btn-body{position:relative;z-index:2;padding:0 20px;display:flex;flex-direction:column;flex:1;}
-.so-btn-sigla{display:inline-block;background:#c9a84c;color:#0a1628;font-size:9px;font-weight:700;letter-spacing:2px;padding:2px 8px;border-radius:2px;margin-bottom:5px;width:fit-content;}
-.so-btn-nome{font-size:15px;font-weight:800;color:#fff;text-transform:uppercase;letter-spacing:0.5px;line-height:1.2;}
-.so-btn-lema{font-size:9px;color:rgba(201,168,76,0.7);letter-spacing:2px;text-transform:uppercase;margin-top:3px;}
-.so-btn-arrow{position:absolute;right:20px;top:50%;transform:translateY(-50%);color:#c9a84c;font-size:20px;font-weight:300;}
-
-.so-grid{display:flex;flex-direction:column;gap:0;}
-.so-btn{position:relative;overflow:hidden;height:120px;display:flex;align-items:center;text-decoration:none;}
-.so-btn-bg{position:absolute;inset:0;background-size:cover;filter:brightness(0.3);transition:filter 0.3s;}
-.so-btn:active .so-btn-bg{filter:brightness(0.45);}
-.so-btn-ov{position:absolute;inset:0;background:linear-gradient(to right,rgba(10,22,40,0.98) 0%,rgba(10,22,40,0.75) 55%,rgba(10,22,40,0.2) 100%);}
-.so-btn-body{position:relative;z-index:2;padding:0 16px;display:flex;align-items:center;gap:14px;flex:1;}
-.so-btn-brasao{width:52px;height:52px;object-fit:contain;flex-shrink:0;filter:drop-shadow(0 2px 6px rgba(0,0,0,0.5));}
-.so-btn-info{display:flex;flex-direction:column;}
-.so-btn-sigla{display:inline-block;background:#c9a84c;color:#0a1628;font-size:9px;font-weight:700;letter-spacing:2px;padding:2px 8px;border-radius:2px;margin-bottom:5px;width:fit-content;}
-.so-btn-nome{font-size:14px;font-weight:800;color:#fff;text-transform:uppercase;letter-spacing:0.5px;line-height:1.2;}
-.so-btn-lema{font-size:9px;color:rgba(201,168,76,0.75);letter-spacing:1px;text-transform:uppercase;margin-top:3px;}
-.so-btn-arrow{position:absolute;right:16px;top:50%;transform:translateY(-50%);color:#c9a84c;font-size:22px;}
-
+.ft-copy{font-size:9px;color:rgba(255,255,255,0.2);}
 </style>
 </head>
 <body>
@@ -140,7 +107,6 @@ footer{background:#05101e;padding:28px 24px;display:flex;flex-direction:column;a
     <p style="font-size:11px;font-weight:700;color:#c9a84c;letter-spacing:3px;text-transform:uppercase;margin-bottom:8px;">Lei n.º 53/2007, de 31 de Agosto · Art.º 40.º</p>
     <p style="font-size:13px;line-height:1.75;color:#555;">A Unidade Especial de Polícia é uma unidade especialmente vocacionada para operações de manutenção e restabelecimento da ordem pública, resolução e gestão de incidentes críticos, intervenção táctica em situações de violência concertada e de elevada perigosidade, complexidade e risco, segurança de instalações sensíveis e de grandes eventos, segurança pessoal dos membros dos órgãos de soberania e de altas entidades, inactivação de explosivos e segurança em subsolo e aprontamento e projecção de forças para missões internacionais.</p>
   </div>
-  <p style="display:none"></p>
   <div class="stats">
     <div class="stat"><span class="stat-n">18</span><span class="stat-l">Anos</span></div>
     <div class="stat"><span class="stat-n">5</span><span class="stat-l">Subunidades</span></div>
@@ -153,7 +119,7 @@ footer{background:#05101e;padding:28px 24px;display:flex;flex-direction:column;a
   <h2 class="s-title" style="color:#fff;">Comandante</h2>
   <div class="s-bar"></div>
   <div class="cmdt-foto-wrap">
-    <img class="cmdt-foto" src="img/comandante.jpg" alt="Pedro Teles — Comandante da UEP">>>>
+    <img class="cmdt-foto" src="img/comandante.jpg" alt="Pedro Teles — Comandante da UEP">
   </div>
   <div class="cmdt-id">
     <span class="cmdt-cargo">Comandante da UEP</span>
@@ -163,7 +129,6 @@ footer{background:#05101e;padding:28px 24px;display:flex;flex-direction:column;a
   <div class="cmdt-sep"></div>
   <blockquote class="cmdt-quote">"Dezoito anos de história são o reflexo de uma Unidade que nunca recuou perante o dever. A cada missão cumprida, a cada operação concluída, reafirmamos o nosso compromisso com a segurança dos cidadãos e com a excelência que Portugal merece. A Força da Unidade está nas suas mulheres e nos seus homens — hoje como sempre."</blockquote>
   <p class="cmdt-assin">— Superintendente-Chefe Pedro Teles</p>
-  <div class="cmdt-wave"></div>
 </section>
 
 <section class="subs">
@@ -174,79 +139,69 @@ footer{background:#05101e;padding:28px 24px;display:flex;flex-direction:column;a
     <p class="s-text" style="margin-bottom:0;">Conheça cada uma das subunidades operacionais da UEP.</p>
   </div>
   <div class="so-grid">
-
     <a href="so/ci.html" class="so-btn">
       <div class="so-btn-bg" style="background-image:url('img/card_ci.jpg');background-position:center 40%;"></div>
       <div class="so-btn-ov"></div>
       <div class="so-btn-body">
-        <img class="so-btn-brasao" src="img/brasao_ci.png"
-             alt="Brasão CI" onerror="this.src='img/brasao.png'">
+        <img class="so-btn-brasao" src="img/brasao_ci.jpg" alt="Brasão CI" onerror="this.src='img/brasao.png'">
         <div class="so-btn-info">
           <span class="so-btn-sigla">CI</span>
           <span class="so-btn-nome">Corpo de Intervenção</span>
           <span class="so-btn-lema">A Fortiori · Por Maioria de Razão</span>
         </div>
-        <span class="so-btn-arrow">›</span>
+        <span class="so-btn-arrow">&#8250;</span>
       </div>
     </a>
-
     <a href="so/goe.html" class="so-btn">
       <div class="so-btn-bg" style="background-image:url('img/card_goe.jpg');background-position:center 60%;"></div>
       <div class="so-btn-ov"></div>
       <div class="so-btn-body">
-        <img class="so-btn-brasao" src="img/brasao_goe.png"
-             alt="Brasão GOE" onerror="this.src='img/brasao.png'">
+        <img class="so-btn-brasao" src="img/brasao_goe.jpg" alt="Brasão GOE" onerror="this.src='img/brasao.png'">
         <div class="so-btn-info">
           <span class="so-btn-sigla">GOE</span>
           <span class="so-btn-nome">Grupo de Operações Especiais</span>
           <span class="so-btn-lema">Ultima Ratio · Última Razão</span>
         </div>
-        <span class="so-btn-arrow">›</span>
+        <span class="so-btn-arrow">&#8250;</span>
       </div>
     </a>
-
     <a href="so/csp.html" class="so-btn">
       <div class="so-btn-bg" style="background-image:url('img/card_csp.jpg');background-position:center 5%;"></div>
       <div class="so-btn-ov"></div>
       <div class="so-btn-body">
-        <img class="so-btn-brasao" src="img/brasao_csp.png"
-             alt="Brasão CSP" onerror="this.src='img/brasao.png'">
+        <img class="so-btn-brasao" src="img/brasao_csp.jpg" alt="Brasão CSP" onerror="this.src='img/brasao.png'">
         <div class="so-btn-info">
           <span class="so-btn-sigla">CSP</span>
           <span class="so-btn-nome">Corpo de Segurança Pessoal</span>
           <span class="so-btn-lema">Prontidão e Lealdade</span>
         </div>
-        <span class="so-btn-arrow">›</span>
+        <span class="so-btn-arrow">&#8250;</span>
       </div>
     </a>
-
     <a href="so/ciexss.html" class="so-btn">
       <div class="so-btn-bg" style="background-image:url('img/card_ciexss.jpg');background-position:center 18%;"></div>
       <div class="so-btn-ov"></div>
       <div class="so-btn-body">
-        <img class="so-btn-brasao" src="img/brasao_ciexss.png"
-             alt="Brasão CIEXSS" onerror="this.src='img/brasao.png'">
+        <img class="so-btn-brasao" src="img/brasao_ciexss.jpg" alt="Brasão CIEXSS" onerror="this.src='img/brasao.png'">
         <div class="so-btn-info">
           <span class="so-btn-sigla">CIEXSS</span>
-          <span class="so-btn-nome">Centro de Inactivação de Explosivos e Segurança em Subsolo</span>
-          <span class="so-btn-lema">Doctis Intrepidus Ac Sereno · Intrépidos e Serenos</span>
+          <span class="so-btn-nome">Centro de Inactivação de Explosivos e Seg. em Subsolo</span>
+          <span class="so-btn-lema">Doctis Intrepidus Ac Sereno</span>
         </div>
-        <span class="so-btn-arrow">›</span>
+        <span class="so-btn-arrow">&#8250;</span>
       </div>
     </a>
-
     <a href="so/goc.html" class="so-btn">
       <div class="so-btn-bg" style="background-image:url('img/card_goc.jpg');background-position:center 10%;"></div>
       <div class="so-btn-ov"></div>
       <div class="so-btn-body">
-        <img class="so-btn-brasao" src="img/brasao_goc.png"
-             alt="Brasão GOC" onerror="this.src='img/brasao.png'">
+        <img class="so-btn-brasao" src="img/brasao_goc.jpg" alt="Brasão GOC" onerror="this.src='img/brasao.png'">
         <div class="so-btn-info">
           <span class="so-btn-sigla">GOC</span>
           <span class="so-btn-nome">Grupo Operacional Cinotécnico</span>
           <span class="so-btn-lema">Semper Fidelis</span>
         </div>
-        <span class="so-btn-arrow">›</span>
+        <span class="so-btn-arrow">&#8250;</span>
       </div>
     </a>
   </div>
@@ -256,20 +211,33 @@ footer{background:#05101e;padding:28px 24px;display:flex;flex-direction:column;a
   <div class="s-label">Arquivo fotográfico</div>
   <h2 class="s-title">Galeria</h2>
   <div class="s-bar"></div>
-  <p class="s-text">Momentos que definem a nossa história.</p>
+  <p class="s-text">Toca numa foto para conhecer a subunidade.</p>
   <div class="gal-grid">
-    <div class="gal-item"><img src="img/gal_ci.jpg" alt="CI"></div>
-    <div class="gal-item"><img src="img/gal_goe.jpg" alt="GOE"></div>
-    <div class="gal-item"><img src="img/gal_csp.jpg" alt="CSP"></div>
-    <div class="gal-item"><img src="img/gal_ciexss.jpg" alt="CIEXSS"></div>
-    <div class="gal-item"><img src="img/gal_goc.jpg" alt="GOC"></div>
-    <div class="gal-item"><img src="img/gal_goe2.jpg" alt="GOE noite"></div>
+    <a href="so/ci.html" class="gal-item gal-link">
+      <img src="img/gal_ci.jpg" alt="CI">
+      <div class="gal-label">CI</div>
+    </a>
+    <a href="so/goe.html" class="gal-item gal-link">
+      <img src="img/gal_goe.jpg" alt="GOE">
+      <div class="gal-label">GOE</div>
+    </a>
+    <a href="so/csp.html" class="gal-item gal-link">
+      <img src="img/gal_csp.jpg" alt="CSP">
+      <div class="gal-label">CSP</div>
+    </a>
+    <a href="so/ciexss.html" class="gal-item gal-link">
+      <img src="img/gal_ciexss.jpg" alt="CIEXSS">
+      <div class="gal-label">CIEXSS</div>
+    </a>
+    <a href="so/goc.html" class="gal-item gal-link">
+      <img src="img/gal_goc.jpg" alt="GOC">
+      <div class="gal-label">GOC</div>
+    </a>
   </div>
 </section>
 
 <section class="redes">
-  <h2 class="s-title" style="color:#fff;font-size:32px;margin-bottom:28px;">Segue-nos</h2>
-  <p class="s-text">Fique a par de todas as novidades e actividades da UEP.</p>
+  <h2 class="s-title">Segue-nos</h2>
   <div class="redes-lista">
     <a class="rede-btn r-fb" href="https://www.facebook.com/share/1BC46FoNNn/" target="_blank">👥 Facebook</a>
     <a class="rede-btn r-ig" href="https://www.instagram.com/unidadeespecialpolicia?igsh=MTNlZ2d6NDk4azh6dQ==" target="_blank">📷 Instagram</a>
@@ -278,10 +246,7 @@ footer{background:#05101e;padding:28px 24px;display:flex;flex-direction:column;a
 </section>
 
 <footer>
-  <div class="ft-psp">
-    <span class="ft-barras">///</span>
-    <span class="ft-nome">Polícia de Segurança Pública</span>
-  </div>
+  <div class="ft-psp"><span class="ft-barras">///</span><span class="ft-nome">Polícia de Segurança Pública</span></div>
   <span class="ft-lema">— A Força da Unidade —</span>
   <span class="ft-copy">© 2026 Unidade Especial de Polícia · PSP</span>
 </footer>
