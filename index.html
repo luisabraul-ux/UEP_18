@@ -87,6 +87,17 @@ footer{background:#05101e;padding:28px 24px;display:flex;flex-direction:column;a
 .sub-legal-art{font-size:9px;font-weight:700;color:rgba(201,168,76,0.8);letter-spacing:2px;text-transform:uppercase;display:block;margin-bottom:4px;}
 .sub-legal-txt{font-size:11px;color:rgba(255,255,255,0.6);line-height:1.6;margin:0;}
 .cmdt-foto-wrap{display:flex;justify-content:center;margin-bottom:22px;}
+
+.so-grid{display:flex;flex-direction:column;gap:0;}
+.so-btn{position:relative;overflow:hidden;height:100px;display:flex;align-items:center;text-decoration:none;}
+.so-btn-bg{position:absolute;inset:0;background-size:cover;filter:brightness(0.3);transition:filter 0.3s;}
+.so-btn:active .so-btn-bg{filter:brightness(0.45);}
+.so-btn-ov{position:absolute;inset:0;background:linear-gradient(to right,rgba(10,22,40,0.98) 0%,rgba(10,22,40,0.7) 60%,rgba(10,22,40,0.3) 100%);}
+.so-btn-body{position:relative;z-index:2;padding:0 20px;display:flex;flex-direction:column;flex:1;}
+.so-btn-sigla{display:inline-block;background:#c9a84c;color:#0a1628;font-size:9px;font-weight:700;letter-spacing:2px;padding:2px 8px;border-radius:2px;margin-bottom:5px;width:fit-content;}
+.so-btn-nome{font-size:15px;font-weight:800;color:#fff;text-transform:uppercase;letter-spacing:0.5px;line-height:1.2;}
+.so-btn-lema{font-size:9px;color:rgba(201,168,76,0.7);letter-spacing:2px;text-transform:uppercase;margin-top:3px;}
+.so-btn-arrow{position:absolute;right:20px;top:50%;transform:translateY(-50%);color:#c9a84c;font-size:20px;font-weight:300;}
 </style>
 </head>
 <body>
@@ -146,81 +157,65 @@ footer{background:#05101e;padding:28px 24px;display:flex;flex-direction:column;a
     <div class="s-label">Estrutura operacional</div>
     <h2 class="s-title">As Nossas Subunidades</h2>
     <div class="s-bar"></div>
+    <p class="s-text" style="margin-bottom:0;">Conheça cada uma das subunidades operacionais da UEP — a sua história, missão e valências.</p>
   </div>
-  <div class="sub-card">
-    <div class="sub-bg" style="background-image:url('img/card_ci.jpg');background-position:center 40%;"></div>
-    <div class="sub-ov"></div>
-    <div class="sub-body">
-      <span class="sub-lema">A Fortiori · Por Maioria de Razão</span>
-      <span class="sub-nome">Corpo de Intervenção</span>
-      <span class="sub-sigla">CI</span>
-      <p class="sub-text">O Corpo de Intervenção é a força de reserva da PSP, vocacionada para a manutenção e restabelecimento da ordem pública, protecção de instalações e apoio a órgãos de segurança policial em todo o território nacional.</p>
-      <span class="sub-data">Fundação: 25 de Novembro de 1975</span>
-        <div class="sub-legal">
-          <span class="sub-legal-art">Art.º 42.º</span>
-          <p class="sub-legal-txt">O Corpo de Intervenção constitui uma força de reserva à ordem do director nacional, especialmente preparada e destinada a ser utilizada em acções de manutenção e reposição de ordem pública, combate a situações de violência concertada e colaboração com os comandos no patrulhamento.</p>
-        </div>
-    </div>
-  </div>
-  <div class="sub-card">
-    <div class="sub-bg" style="background-image:url('img/card_goe.jpg');background-position:center 60%;"></div>
-    <div class="sub-ov"></div>
-    <div class="sub-body">
-      <span class="sub-lema">Ultima Ratio · Última Razão</span>
-      <span class="sub-nome">Grupo de Operações Especiais</span>
-      <span class="sub-sigla">GOE</span>
-      <p class="sub-text">Criado em 24 de Dezembro de 1979, o GOE é a força de intervenção táctica da PSP, destinada a combater situações de violência declarada cuja resolução ultrapasse os meios normais de actuação.</p>
-      <span class="sub-data">Fundação: 24 de Dezembro de 1979</span>
-        <div class="sub-legal">
-          <span class="sub-legal-art">Art.º 43.º</span>
-          <p class="sub-legal-txt">O Grupo de Operações Especiais constitui uma força de reserva da PSP, à ordem do director nacional, destinada, fundamentalmente, a combater situações de violência declarada, cuja resolução ultrapasse os meios normais de actuação.</p>
-        </div>
-    </div>
-  </div>
-  <div class="sub-card">
-    <div class="sub-bg" style="background-image:url('img/card_csp.jpg');background-position:center 5%;"></div>
-    <div class="sub-ov"></div>
-    <div class="sub-body">
-      <span class="sub-lema">Prontidão e Lealdade</span>
-      <span class="sub-nome">Corpo de Segurança Pessoal</span>
-      <span class="sub-sigla">CSP</span>
-      <p class="sub-text">O Corpo de Segurança Pessoal, criado em 29 de Dezembro de 1994, é especializado na protecção pessoal de altas entidades nacionais e internacionais e membros dos órgãos de soberania do Estado.</p>
-      <span class="sub-data">Fundação: 29 de Dezembro de 1994</span>
-        <div class="sub-legal">
-          <span class="sub-legal-art">Art.º 44.º</span>
-          <p class="sub-legal-txt">O Corpo de Segurança Pessoal é uma força especialmente preparada e vocacionada para a segurança pessoal de altas entidades, membros de órgãos de soberania, protecção policial de testemunhas ou outros cidadãos sujeitos a ameaça, no âmbito das atribuições da PSP.</p>
-        </div>
-    </div>
-  </div>
-  <div class="sub-card">
-    <div class="sub-bg" style="background-image:url('img/card_ciexss.jpg');background-position:center 18%;"></div>
-    <div class="sub-ov"></div>
-    <div class="sub-body">
-      <span class="sub-lema">Doctis Intrepidus Ac Sereno · Intrépidos e Serenos</span>
-      <span class="sub-nome">Centro de Inactivação de Explosivos e Segurança em Subsolo</span>
-      <span class="sub-sigla">CIEXSS</span>
-      <p class="sub-text">Criado em 19 de Janeiro de 2000, o CIEXSS é a subunidade especializada na detecção e inactivação de engenhos explosivos, segurança em subsolo, resposta NRBQ e formação técnica nesta área.</p>
-      <span class="sub-data">Fundação: 19 de Janeiro de 2000</span>
-        <div class="sub-legal">
-          <span class="sub-legal-art">Art.º 45.º</span>
-          <p class="sub-legal-txt">O Centro de Inactivação de Explosivos e Segurança em Subsolo é um núcleo de direcção e formação técnica da especialidade de detecção e inactivação de engenhos explosivos e de segurança no subsolo.</p>
-        </div>
-    </div>
-  </div>
-  <div class="sub-card">
-    <div class="sub-bg" style="background-image:url('img/card_goc.jpg');background-position:center 10%;"></div>
-    <div class="sub-ov"></div>
-    <div class="sub-body">
-      <span class="sub-lema">Semper Fidelis</span>
-      <span class="sub-nome">Grupo Operacional Cinotécnico</span>
-      <span class="sub-sigla">GOC</span>
-      <p class="sub-text">O Grupo Operacional Cinotécnico, criado em 31 de Agosto de 2007, é a subunidade especializada na aplicação de binómios canídeos no quadro das competências da PSP, em apoio às restantes subunidades e missões nacionais e internacionais.</p>
-      <span class="sub-data">Fundação: 31 de Agosto de 2007</span>
-        <div class="sub-legal">
-          <span class="sub-legal-art">Art.º 46.º</span>
-          <p class="sub-legal-txt">O Grupo Operacional Cinotécnico é uma subunidade especialmente preparada e vocacionada para a aplicação de canídeos no quadro de competências da PSP.</p>
-        </div>
-    </div>
+  <div class="so-grid">
+
+    <a href="so/ci.html" class="so-btn">
+      <div class="so-btn-bg" style="background-image:url('img/card_ci.jpg');background-position:center 40%;"></div>
+      <div class="so-btn-ov"></div>
+      <div class="so-btn-body">
+        <span class="so-btn-sigla">CI</span>
+        <span class="so-btn-nome">Corpo de Intervenção</span>
+        <span class="so-btn-lema">A Fortiori · Por Maioria de Razão</span>
+        <span class="so-btn-arrow">→</span>
+      </div>
+    </a>
+
+    <a href="so/goe.html" class="so-btn">
+      <div class="so-btn-bg" style="background-image:url('img/card_goe.jpg');background-position:center 60%;"></div>
+      <div class="so-btn-ov"></div>
+      <div class="so-btn-body">
+        <span class="so-btn-sigla">GOE</span>
+        <span class="so-btn-nome">Grupo de Operações Especiais</span>
+        <span class="so-btn-lema">Ultima Ratio · Última Razão</span>
+        <span class="so-btn-arrow">→</span>
+      </div>
+    </a>
+
+    <a href="so/csp.html" class="so-btn">
+      <div class="so-btn-bg" style="background-image:url('img/card_csp.jpg');background-position:center 5%;"></div>
+      <div class="so-btn-ov"></div>
+      <div class="so-btn-body">
+        <span class="so-btn-sigla">CSP</span>
+        <span class="so-btn-nome">Corpo de Segurança Pessoal</span>
+        <span class="so-btn-lema">Prontidão e Lealdade</span>
+        <span class="so-btn-arrow">→</span>
+      </div>
+    </a>
+
+    <a href="so/ciexss.html" class="so-btn">
+      <div class="so-btn-bg" style="background-image:url('img/card_ciexss.jpg');background-position:center 18%;"></div>
+      <div class="so-btn-ov"></div>
+      <div class="so-btn-body">
+        <span class="so-btn-sigla">CIEXSS</span>
+        <span class="so-btn-nome">Centro de Inactivação de Explosivos</span>
+        <span class="so-btn-lema">Doctis Intrepidus Ac Sereno</span>
+        <span class="so-btn-arrow">→</span>
+      </div>
+    </a>
+
+    <a href="so/goc.html" class="so-btn">
+      <div class="so-btn-bg" style="background-image:url('img/card_goc.jpg');background-position:center 10%;"></div>
+      <div class="so-btn-ov"></div>
+      <div class="so-btn-body">
+        <span class="so-btn-sigla">GOC</span>
+        <span class="so-btn-nome">Grupo Operacional Cinotécnico</span>
+        <span class="so-btn-lema">Semper Fidelis</span>
+        <span class="so-btn-arrow">→</span>
+      </div>
+    </a>
+
   </div>
 </section>
 
