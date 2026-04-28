@@ -11,7 +11,7 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1a1a2e;overf
 .hero-bg{position:absolute;inset:0;background-size:cover;background-position:center 30%;filter:brightness(0.55);}
 .hero-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,22,40,1) 0%,rgba(10,22,40,0.5) 50%,rgba(10,22,40,0.1) 100%);}
 .hero-content{position:relative;z-index:2;padding:20px;width:100%;display:flex;flex-direction:column;}
-.hero-back{display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,0.7);font-size:13px;text-decoration:none;margin-bottom:16px;background:rgba(255,255,255,0.1);padding:6px 12px;border-radius:20px;width:fit-content;}
+.hero-back{display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,0.7);font-size:13px;text-decoration:none;margin-bottom:16px;background:rgba(255,255,255,0.12);padding:6px 14px;border-radius:20px;width:fit-content;backdrop-filter:blur(4px);}
 .hero-top{display:flex;align-items:flex-end;gap:14px;}
 .hero-brasao{width:64px;height:64px;object-fit:contain;flex-shrink:0;filter:drop-shadow(0 2px 12px rgba(0,0,0,0.6));}
 .hero-lema{font-size:9px;color:var(--ouro);letter-spacing:3px;text-transform:uppercase;display:block;margin-bottom:5px;}
@@ -22,8 +22,12 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1a1a2e;overf
 .sec-titulo{font-size:20px;font-weight:800;color:var(--azul);margin-bottom:10px;}
 .sec-bar{width:36px;height:3px;background:var(--ouro);margin-bottom:16px;border-radius:2px;}
 .sec-texto{font-size:15px;line-height:1.8;color:var(--muted);}
+.missao-box{background:var(--azul);border-radius:10px;padding:20px;margin-bottom:24px;}
+.missao-label{font-size:9px;font-weight:700;color:var(--ouro);letter-spacing:4px;text-transform:uppercase;display:block;margin-bottom:10px;}
+.missao-texto{font-size:14px;line-height:1.8;color:rgba(255,255,255,0.85);}
 .fundacao{display:inline-flex;align-items:center;gap:8px;background:var(--azul);color:rgba(255,255,255,0.7);font-size:12px;padding:8px 14px;border-radius:6px;margin-top:16px;}
 .fundacao strong{color:var(--ouro);}
+.morada{display:flex;align-items:flex-start;gap:8px;margin-top:10px;color:#888;font-size:12px;line-height:1.5;}
 .artigo-box{margin:24px 0;padding:16px;background:rgba(201,168,76,0.07);border-left:3px solid var(--ouro);border-radius:0 8px 8px 0;}
 .artigo-label{font-size:10px;font-weight:700;color:var(--ouro);letter-spacing:3px;text-transform:uppercase;display:block;margin-bottom:8px;}
 .artigo-texto{font-size:13px;line-height:1.75;color:var(--muted);font-style:italic;}
@@ -55,18 +59,32 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1a1a2e;overf
     </div>
   </div>
 </section>
+
 <div class="conteudo">
+
+  <div class="missao-box">
+    <span class="missao-label">Missão</span>
+    <p class="missao-texto">O CI é especializado em ações de manutenção e reposição da ordem pública, sobretudo quando esta é gravemente alterada. O CI reforça diariamente o dispositivo territorial da PSP, em áreas que exigem um patrulhamento mais ostensivo e robusto. Procede a ações de reforço dos Comandos em Espetáculos Desportivos, Ordem Pública, Segurança a Instalações e Altas Entidades.</p>
+  </div>
+
   <span class="sec-label">Enquadramento legal</span>
   <div class="artigo-box">
-    <span class="artigo-label">Lei n.º 53/2007 · Art.º 42.º</span>
-    <p class="artigo-texto">O Corpo de Intervenção (CI) constitui uma força de reserva à ordem do director nacional, especialmente preparada e destinada a ser utilizada em acções de manutenção e reposição de ordem pública, combate a situações de violência concertada e colaboração com os comandos no patrulhamento.</p>
+    <span class="artigo-label">Lei n.º 53/2007, de 31 de Agosto · Art.º 42.º</span>
+    <p class="artigo-texto">O Corpo de Intervenção (CI) constitui uma força de reserva à ordem do director nacional, especialmente preparada e destinada a ser utilizada em acções de manutenção e reposição de ordem pública, combate a situações de violência concertada e colaboração com os comandos no patrulhamento, em condições a definir por despacho do director nacional.</p>
   </div>
-  <span class="sec-label">Sobre a subunidade</span>
+
+  <span class="sec-label">História</span>
   <h2 class="sec-titulo">Corpo de Intervenção</h2>
   <div class="sec-bar"></div>
-  <p class="sec-texto">O Corpo de Intervenção foi criado a 25 de Novembro de 1975, constituindo a força de reserva mais antiga da PSP. Ao longo de quase cinco décadas, o CI afirmou-se como a espinha dorsal da resposta policial a situações de alteração da ordem pública, tendo intervindo nos momentos mais exigentes da história recente de Portugal. Treinado para actuar em ambientes de elevada tensão, o CI garante a manutenção da ordem democrática e a segurança dos cidadãos em grandes eventos, manifestações e situações de crise.</p>
-  <div class="fundacao">Fundação: <strong>25 de Novembro de 1975</strong></div>
-  <div style="margin-top:28px;">
+  <p class="sec-texto">Nos anos 30 do séc. XX, a forte contestação social em meios urbanos exigia novos métodos de ação policial e, neste sentido, em 1937 o tenente Silva Pais defende a criação de uma unidade especial, designada por Polícia de Choque da PSP, que estará na origem da 1.ª Companhia Móvel de Polícia. Nos anos 40 e 50, a PSP seria fortemente mecanizada, sendo dotada dos primeiros blindados de transporte de pessoal. Na década de sessenta, havendo necessidade de manter a ordem pública nas províncias ultramarinas, assiste-se ao reforço dos corpos de PSP de Angola e Moçambique com várias Companhias Móveis. O desmantelamento destas companhias no fim da guerra colonial e a necessidade de aproveitamento do know-how adquirido levaria à constituição do Corpo de Intervenção, aproveitando os homens, os meios e as instalações existentes. A PSP foi pioneira na criação de doutrina sobre a intervenção de manutenção e reposição da ordem pública, sendo seus os primeiros projetos de conversão do armamento em "armamento de menor letalidade" e de aquisição de equipamentos de ordem pública de baixo risco, nomeadamente os primeiros auto-canhões de água.</p>
+
+  <div class="fundacao">Fundação: <strong>27 de Março de 1976</strong></div>
+  <div class="morada">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+    Calçada da Ajuda, n.º 23, 1300-006 Lisboa
+  </div>
+
+  <div style="margin-top:32px;">
     <span class="sec-label">Galeria</span>
     <div class="gal-grid">
       <div class="gal-item"><img src="../img/gal_ci.jpg" alt="CI 1" loading="lazy"></div>
@@ -76,7 +94,9 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1a1a2e;overf
       <div class="gal-item"><img src="../img/gal_ci5.jpg" alt="CI 5" loading="lazy"></div>
     </div>
   </div>
+
 </div>
+
 <footer class="rodape">
   <span class="rodape-barras">///</span>
   <span class="rodape-nome">Polícia de Segurança Pública · UEP</span>

@@ -11,7 +11,7 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1a1a2e;overf
 .hero-bg{position:absolute;inset:0;background-size:cover;background-position:center 30%;filter:brightness(0.55);}
 .hero-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,22,40,1) 0%,rgba(10,22,40,0.5) 50%,rgba(10,22,40,0.1) 100%);}
 .hero-content{position:relative;z-index:2;padding:20px;width:100%;display:flex;flex-direction:column;}
-.hero-back{display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,0.7);font-size:13px;text-decoration:none;margin-bottom:16px;background:rgba(255,255,255,0.1);padding:6px 12px;border-radius:20px;width:fit-content;}
+.hero-back{display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,0.7);font-size:13px;text-decoration:none;margin-bottom:16px;background:rgba(255,255,255,0.12);padding:6px 14px;border-radius:20px;width:fit-content;backdrop-filter:blur(4px);}
 .hero-top{display:flex;align-items:flex-end;gap:14px;}
 .hero-brasao{width:64px;height:64px;object-fit:contain;flex-shrink:0;filter:drop-shadow(0 2px 12px rgba(0,0,0,0.6));}
 .hero-lema{font-size:9px;color:var(--ouro);letter-spacing:3px;text-transform:uppercase;display:block;margin-bottom:5px;}
@@ -22,8 +22,12 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1a1a2e;overf
 .sec-titulo{font-size:20px;font-weight:800;color:var(--azul);margin-bottom:10px;}
 .sec-bar{width:36px;height:3px;background:var(--ouro);margin-bottom:16px;border-radius:2px;}
 .sec-texto{font-size:15px;line-height:1.8;color:var(--muted);}
+.missao-box{background:var(--azul);border-radius:10px;padding:20px;margin-bottom:24px;}
+.missao-label{font-size:9px;font-weight:700;color:var(--ouro);letter-spacing:4px;text-transform:uppercase;display:block;margin-bottom:10px;}
+.missao-texto{font-size:14px;line-height:1.8;color:rgba(255,255,255,0.85);}
 .fundacao{display:inline-flex;align-items:center;gap:8px;background:var(--azul);color:rgba(255,255,255,0.7);font-size:12px;padding:8px 14px;border-radius:6px;margin-top:16px;}
 .fundacao strong{color:var(--ouro);}
+.morada{display:flex;align-items:flex-start;gap:8px;margin-top:10px;color:#888;font-size:12px;line-height:1.5;}
 .artigo-box{margin:24px 0;padding:16px;background:rgba(201,168,76,0.07);border-left:3px solid var(--ouro);border-radius:0 8px 8px 0;}
 .artigo-label{font-size:10px;font-weight:700;color:var(--ouro);letter-spacing:3px;text-transform:uppercase;display:block;margin-bottom:8px;}
 .artigo-texto{font-size:13px;line-height:1.75;color:var(--muted);font-style:italic;}
@@ -55,18 +59,32 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1a1a2e;overf
     </div>
   </div>
 </section>
+
 <div class="conteudo">
+
+  <div class="missao-box">
+    <span class="missao-label">Missão</span>
+    <p class="missao-texto">O GOC é uma subunidade especialmente preparada e vocacionada para a aplicação de canídeos no quadro de competências da PSP, nomeadamente em situações de manutenção e reposição de ordem pública, drogas e explosivos, busca e salvamento de pessoas.</p>
+  </div>
+
   <span class="sec-label">Enquadramento legal</span>
   <div class="artigo-box">
-    <span class="artigo-label">Lei n.º 53/2007 · Art.º 46.º</span>
+    <span class="artigo-label">Lei n.º 53/2007, de 31 de Agosto · Art.º 46.º</span>
     <p class="artigo-texto">O Grupo Operacional Cinotécnico (GOC) é uma subunidade especialmente preparada e vocacionada para a aplicação de canídeos no quadro de competências da PSP.</p>
   </div>
-  <span class="sec-label">Sobre a subunidade</span>
+
+  <span class="sec-label">História</span>
   <h2 class="sec-titulo">Grupo Operacional Cinotécnico</h2>
   <div class="sec-bar"></div>
-  <p class="sec-texto">O Grupo Operacional Cinotécnico foi criado a 31 de Agosto de 2007, centralizando na UEP a valência cinotécnica da PSP. Os binómios canídeo-tratador do GOC actuam nas mais diversas missões: detecção de explosivos e estupefacientes, busca e salvamento, controlo de multidões e operações de apoio às restantes subunidades.</p>
-  <div class="fundacao">Fundação: <strong>31 de Agosto de 2007</strong></div>
-  <div style="margin-top:28px;">
+  <p class="sec-texto">As primeiras referências à necessidade de cães na PSP remontam a 1939, quando começa a emergir o fenómeno do tráfico e consumo de estupefacientes. Ao longo dos anos 70 do séc. XX, a PSP constituiu equipas cinotécnicas no seio do Corpo de Intervenção, especialmente para apoiar as intervenções de reposição e manutenção de ordem pública. Percebendo-se que as missões em que podiam ser empregues cães se tornavam cada vez mais variadas e exigentes — busca de droga, explosivos, armas, busca e salvamento de pessoas, intervenção tática de risco elevado — a unidade foi autonomizada em 3 de Abril de 2002, tendo em vista garantir o desenvolvimento das suas especificidades. Hoje o GOC, para além de atuar autonomamente, presta de forma permanente apoio a todas as outras subunidades da UEP.</p>
+
+  <div class="fundacao">Fundação: <strong>3 de Abril de 2002</strong></div>
+  <div class="morada">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+    Quinta das Águas Livres, 2605-197 Belas, Sintra
+  </div>
+
+  <div style="margin-top:32px;">
     <span class="sec-label">Galeria</span>
     <div class="gal-grid">
       <div class="gal-item"><img src="../img/gal_goc.jpg" alt="GOC 1" loading="lazy"></div>
@@ -77,7 +95,9 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1a1a2e;overf
       <div class="gal-item"><img src="../img/gal_goc6.jpg" alt="GOC 6" loading="lazy"></div>
     </div>
   </div>
+
 </div>
+
 <footer class="rodape">
   <span class="rodape-barras">///</span>
   <span class="rodape-nome">Polícia de Segurança Pública · UEP</span>

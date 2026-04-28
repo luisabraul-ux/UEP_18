@@ -11,7 +11,7 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1a1a2e;overf
 .hero-bg{position:absolute;inset:0;background-size:cover;background-position:center 30%;filter:brightness(0.55);}
 .hero-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,22,40,1) 0%,rgba(10,22,40,0.5) 50%,rgba(10,22,40,0.1) 100%);}
 .hero-content{position:relative;z-index:2;padding:20px;width:100%;display:flex;flex-direction:column;}
-.hero-back{display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,0.7);font-size:13px;text-decoration:none;margin-bottom:16px;background:rgba(255,255,255,0.1);padding:6px 12px;border-radius:20px;width:fit-content;}
+.hero-back{display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,0.7);font-size:13px;text-decoration:none;margin-bottom:16px;background:rgba(255,255,255,0.12);padding:6px 14px;border-radius:20px;width:fit-content;backdrop-filter:blur(4px);}
 .hero-top{display:flex;align-items:flex-end;gap:14px;}
 .hero-brasao{width:64px;height:64px;object-fit:contain;flex-shrink:0;filter:drop-shadow(0 2px 12px rgba(0,0,0,0.6));}
 .hero-lema{font-size:9px;color:var(--ouro);letter-spacing:3px;text-transform:uppercase;display:block;margin-bottom:5px;}
@@ -22,8 +22,12 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1a1a2e;overf
 .sec-titulo{font-size:20px;font-weight:800;color:var(--azul);margin-bottom:10px;}
 .sec-bar{width:36px;height:3px;background:var(--ouro);margin-bottom:16px;border-radius:2px;}
 .sec-texto{font-size:15px;line-height:1.8;color:var(--muted);}
+.missao-box{background:var(--azul);border-radius:10px;padding:20px;margin-bottom:24px;}
+.missao-label{font-size:9px;font-weight:700;color:var(--ouro);letter-spacing:4px;text-transform:uppercase;display:block;margin-bottom:10px;}
+.missao-texto{font-size:14px;line-height:1.8;color:rgba(255,255,255,0.85);}
 .fundacao{display:inline-flex;align-items:center;gap:8px;background:var(--azul);color:rgba(255,255,255,0.7);font-size:12px;padding:8px 14px;border-radius:6px;margin-top:16px;}
 .fundacao strong{color:var(--ouro);}
+.morada{display:flex;align-items:flex-start;gap:8px;margin-top:10px;color:#888;font-size:12px;line-height:1.5;}
 .artigo-box{margin:24px 0;padding:16px;background:rgba(201,168,76,0.07);border-left:3px solid var(--ouro);border-radius:0 8px 8px 0;}
 .artigo-label{font-size:10px;font-weight:700;color:var(--ouro);letter-spacing:3px;text-transform:uppercase;display:block;margin-bottom:8px;}
 .artigo-texto{font-size:13px;line-height:1.75;color:var(--muted);font-style:italic;}
@@ -48,25 +52,39 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1a1a2e;overf
     <div class="hero-top">
       <img class="hero-brasao" src="../img/brasao_ciexss.jpg" alt="Brasão CIEXSS" onerror="this.src='../img/brasao.png'">
       <div>
-        <span class="hero-lema">Doctis Intrepidus Ac Sereno</span>
+        <span class="hero-lema">Doctis Intrepidus Ac Sereno · Intrépidos e Serenos</span>
         <div class="hero-titulo">Centro de Inactivação de Explosivos e Segurança em Subsolo</div>
         <span class="hero-sigla">CIEXSS</span>
       </div>
     </div>
   </div>
 </section>
+
 <div class="conteudo">
+
+  <div class="missao-box">
+    <span class="missao-label">Missão</span>
+    <p class="missao-texto">O CIEXSS é uma subunidade vocacionada para a detecção e inativação de engenhos explosivos e de segurança no subsolo, procedendo a um grande número de missões de proteção. Está treinada e capacitada para atuar em ambientes perigosos e insalubres, nomeadamente contaminados com agentes biológicos, químicos, nucleares ou radiativos.</p>
+  </div>
+
   <span class="sec-label">Enquadramento legal</span>
   <div class="artigo-box">
-    <span class="artigo-label">Lei n.º 53/2007 · Art.º 45.º</span>
+    <span class="artigo-label">Lei n.º 53/2007, de 31 de Agosto · Art.º 45.º</span>
     <p class="artigo-texto">O Centro de Inactivação de Explosivos e Segurança em Subsolo (CIEXSS) é um núcleo de direcção e formação técnica da especialidade de detecção e inactivação de engenhos explosivos e de segurança no subsolo.</p>
   </div>
-  <span class="sec-label">Sobre a subunidade</span>
+
+  <span class="sec-label">História</span>
   <h2 class="sec-titulo">Centro de Inactivação de Explosivos e Segurança em Subsolo</h2>
   <div class="sec-bar"></div>
-  <p class="sec-texto">Criado a 19 de Janeiro de 2000, o CIEXSS é a subunidade especializada na resposta a ameaças explosivas e em ambiente subterrâneo. Os seus técnicos intervêm na detecção, identificação e inactivação de engenhos explosivos convencionais e não convencionais, incluindo engenhos NRBQ. O CIEXSS colabora com organismos nacionais e internacionais na partilha de conhecimento e boas práticas.</p>
-  <div class="fundacao">Fundação: <strong>19 de Janeiro de 2000</strong></div>
-  <div style="margin-top:28px;">
+  <p class="sec-texto">Estas equipas substituíram as anteriores equipas especializadas em explosivos, minas e armadilhas criadas na década de sessenta do séc. XX, sendo criado formalmente a 5 de Janeiro de 2000 como subunidade autónoma da UEP, centralizando toda a valência de inactivação de explosivos e segurança em subsolo da PSP.</p>
+
+  <div class="fundacao">Fundação: <strong>5 de Janeiro de 2000</strong></div>
+  <div class="morada">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+    Quinta das Águas Livres, 2605-197 Belas, Sintra
+  </div>
+
+  <div style="margin-top:32px;">
     <span class="sec-label">Galeria</span>
     <div class="gal-grid">
       <div class="gal-item"><img src="../img/gal_ciexss.jpg" alt="CIEXSS 1" loading="lazy"></div>
@@ -76,7 +94,9 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1a1a2e;overf
       <div class="gal-item"><img src="../img/gal_ciexss5.jpg" alt="CIEXSS 5" loading="lazy"></div>
     </div>
   </div>
+
 </div>
+
 <footer class="rodape">
   <span class="rodape-barras">///</span>
   <span class="rodape-nome">Polícia de Segurança Pública · UEP</span>
