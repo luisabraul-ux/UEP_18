@@ -8,10 +8,10 @@
 :root{--azul:#0a1628;--ouro:#c9a84c;--muted:#555;}
 body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1a1a2e;overflow-x:hidden;}
 .hero{position:relative;width:100%;height:65vw;max-height:380px;min-height:260px;overflow:hidden;display:flex;align-items:flex-end;}
-.hero-bg{position:absolute;inset:0;background-size:cover;background-position:center 30%;filter:brightness(0.55);}
-.hero-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,22,40,1) 0%,rgba(10,22,40,0.5) 50%,rgba(10,22,40,0.1) 100%);}
+.hero-bg{position:absolute;inset:0;background-size:cover;background-position:center 30%;filter:brightness(0.65);}
+.hero-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,22,40,1) 0%,rgba(10,22,40,0.35) 45%,transparent 100%);}
 .hero-content{position:relative;z-index:2;padding:20px;width:100%;display:flex;flex-direction:column;}
-.hero-back{display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,0.7);font-size:13px;text-decoration:none;margin-bottom:16px;background:rgba(255,255,255,0.12);padding:6px 14px;border-radius:20px;width:fit-content;backdrop-filter:blur(4px);}
+.hero-back{display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,0.9);font-size:13px;text-decoration:none;margin-bottom:16px;background:rgba(0,0,0,0.3);padding:6px 14px;border-radius:20px;width:fit-content;backdrop-filter:blur(4px);}
 .hero-top{display:flex;align-items:flex-end;gap:14px;}
 .hero-brasao{width:64px;height:64px;object-fit:contain;flex-shrink:0;filter:drop-shadow(0 2px 12px rgba(0,0,0,0.6));}
 .hero-lema{font-size:9px;color:var(--ouro);letter-spacing:3px;text-transform:uppercase;display:block;margin-bottom:5px;}
@@ -31,9 +31,19 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1a1a2e;overf
 .artigo-box{margin:24px 0;padding:16px;background:rgba(201,168,76,0.07);border-left:3px solid var(--ouro);border-radius:0 8px 8px 0;}
 .artigo-label{font-size:10px;font-weight:700;color:var(--ouro);letter-spacing:3px;text-transform:uppercase;display:block;margin-bottom:8px;}
 .artigo-texto{font-size:13px;line-height:1.75;color:var(--muted);font-style:italic;}
+/* Galeria com lightbox */
 .gal-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:14px;}
-.gal-item{border-radius:8px;overflow:hidden;aspect-ratio:4/3;}
-.gal-item img{width:100%;height:100%;object-fit:cover;display:block;}
+.gal-item{border-radius:8px;overflow:hidden;aspect-ratio:4/3;cursor:pointer;}
+.gal-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.2s;}
+.gal-item:active img{transform:scale(1.03);}
+/* Lightbox */
+.lb{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:1000;align-items:center;justify-content:center;}
+.lb.active{display:flex;}
+.lb img{max-width:95vw;max-height:90vh;object-fit:contain;border-radius:4px;}
+.lb-close{position:absolute;top:16px;right:16px;color:#fff;font-size:32px;cursor:pointer;line-height:1;background:rgba(255,255,255,0.15);width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;}
+.lb-prev,.lb-next{position:absolute;top:50%;transform:translateY(-50%);color:#fff;font-size:28px;cursor:pointer;background:rgba(255,255,255,0.15);width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;}
+.lb-prev{left:12px;}
+.lb-next{right:12px;}
 .rodape{background:var(--azul);padding:24px;text-align:center;margin-top:40px;}
 .rodape-barras{color:var(--ouro);font-size:16px;font-weight:900;}
 .rodape-nome{font-size:10px;color:rgba(255,255,255,0.4);letter-spacing:3px;text-transform:uppercase;display:block;margin-top:4px;}
@@ -41,6 +51,7 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1a1a2e;overf
 .btn-voltar{position:fixed;bottom:20px;right:20px;background:var(--ouro);color:var(--azul);width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 4px 16px rgba(0,0,0,0.3);z-index:100;font-size:22px;font-weight:700;}</style>
 </head>
 <body>
+
 <section class="hero">
   <div class="hero-bg" style="background-image:url('../img/card_goe.jpg');"></div>
   <div class="hero-ov"></div>
@@ -61,40 +72,42 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1a1a2e;overf
 </section>
 
 <div class="conteudo">
-
   <div class="missao-box">
     <span class="missao-label">Missão</span>
     <p class="missao-texto">O GOE é uma subunidade especializada na intervenção táctica em situações de terrorismo e criminalidade especialmente violenta, atuando quer em operações planeadas quer no âmbito de incidentes táctico-policiais que impliquem, entre outras situações, sequestros ou tomada de reféns. Para além destas missões, o GOE planeia e executa a segurança às representações diplomáticas de Portugal em zonas de maior risco.</p>
   </div>
-
   <span class="sec-label">Enquadramento legal</span>
   <div class="artigo-box">
     <span class="artigo-label">Lei n.º 53/2007, de 31 de Agosto · Art.º 43.º</span>
     <p class="artigo-texto">O Grupo de Operações Especiais (GOE) constitui uma força de reserva da PSP, à ordem do director nacional, destinada, fundamentalmente, a combater situações de violência declarada, cuja resolução ultrapasse os meios normais de actuação.</p>
   </div>
-
   <span class="sec-label">História</span>
   <h2 class="sec-titulo">Grupo de Operações Especiais</h2>
   <div class="sec-bar"></div>
-  <p class="sec-texto">O Grupo de Operações Especiais foi constituído para dotar o Estado de um mecanismo que também permitisse dar respostas adequadas a situações de grande violência como são o sequestro e a tomada de reféns, neutralizar adversários fortemente armados e combater as ameaças que proliferaram na década de 70 do séc. XX, com a emergência de grupos terroristas em todo o ocidente e no norte de África. Em 24 de Dezembro de 1979, é constituída uma unidade com competências de intervenção específicas na PSP, para atuar em todo o território nacional e apenas "em circunstâncias excepcionais que poderiam pôr em causa a convivência pacífica dos cidadãos".</p>
-
-  <div class="fundacao">Fundação: <strong>24 de Dezembro de 1979</strong></div>
+  <p class="sec-texto">O Grupo de Operações Especiais foi constituído para dotar o Estado de um mecanismo que permitisse dar respostas adequadas a situações de grande violência como são o sequestro e a tomada de reféns, neutralizar adversários fortemente armados e combater as ameaças que proliferaram na década de 70 do séc. XX, com a emergência de grupos terroristas em todo o ocidente e no norte de África. Em 24 de Dezembro de 1979 é constituída uma unidade com competências de intervenção específicas na PSP, para atuar em todo o território nacional e apenas "em circunstâncias excepcionais que poderiam pôr em causa a convivência pacífica dos cidadãos". O GOE é formalmente criado a 29 de Março de 1982.</p>
+  <div class="fundacao">Fundação: <strong>29 de Março de 1982</strong></div>
   <div class="morada">
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
     Quinta das Águas Livres, 2605-197 Belas, Sintra
   </div>
-
   <div style="margin-top:32px;">
     <span class="sec-label">Galeria</span>
     <div class="gal-grid">
-      <div class="gal-item"><img src="../img/gal_goe.jpg" alt="GOE 1" loading="lazy"></div>
-      <div class="gal-item"><img src="../img/gal_goe2.jpg" alt="GOE 2" loading="lazy"></div>
-      <div class="gal-item"><img src="../img/gal_goe3.jpg" alt="GOE 3" loading="lazy"></div>
-      <div class="gal-item"><img src="../img/gal_goe4.jpg" alt="GOE 4" loading="lazy"></div>
-      <div class="gal-item"><img src="../img/gal_goe5.jpg" alt="GOE 5" loading="lazy"></div>
+      <div class="gal-item" onclick="openLb(0)"><img src="../img/gal_goe.jpg" alt="GOE 1" loading="lazy"></div>
+      <div class="gal-item" onclick="openLb(1)"><img src="../img/gal_goe2.jpg" alt="GOE 2" loading="lazy"></div>
+      <div class="gal-item" onclick="openLb(2)"><img src="../img/gal_goe3.jpg" alt="GOE 3" loading="lazy"></div>
+      <div class="gal-item" onclick="openLb(3)"><img src="../img/gal_goe4.jpg" alt="GOE 4" loading="lazy"></div>
+      <div class="gal-item" onclick="openLb(4)"><img src="../img/gal_goe5.jpg" alt="GOE 5" loading="lazy"></div>
     </div>
   </div>
+</div>
 
+<!-- Lightbox -->
+<div class="lb" id="lb" onclick="closeLb(event)">
+  <div class="lb-close" onclick="closeLb()">&#10005;</div>
+  <div class="lb-prev" onclick="event.stopPropagation();moveLb(-1)">&#8249;</div>
+  <img id="lb-img" src="" alt="">
+  <div class="lb-next" onclick="event.stopPropagation();moveLb(1)">&#8250;</div>
 </div>
 
 <footer class="rodape">
@@ -103,5 +116,14 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#fff;color:#1a1a2e;overf
   <span class="rodape-lema">— A Força da Unidade —</span>
 </footer>
 <a href="../index.html" class="btn-voltar">&#8592;</a>
+
+<script>
+const imgs=["../img/gal_goe.jpg", "../img/gal_goe2.jpg", "../img/gal_goe3.jpg", "../img/gal_goe4.jpg", "../img/gal_goe5.jpg"];
+let cur=0;
+function openLb(i){cur=i;document.getElementById('lb-img').src=imgs[i];document.getElementById('lb').classList.add('active');document.body.style.overflow='hidden';}
+function closeLb(e){if(!e||e.target===document.getElementById('lb')){document.getElementById('lb').classList.remove('active');document.body.style.overflow='';}}
+function moveLb(d){cur=(cur+d+imgs.length)%imgs.length;document.getElementById('lb-img').src=imgs[cur];}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLb();if(e.key==='ArrowRight')moveLb(1);if(e.key==='ArrowLeft')moveLb(-1);});
+</script>
 </body>
 </html>
